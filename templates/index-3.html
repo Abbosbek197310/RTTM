@@ -1,0 +1,419 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% load i18n %}
+
+{% block content %}
+
+
+
+<!-- START SECTION BANNER -->
+<section id="home_section" class="banner_section banner_shape bg_black3">
+    <div class="banner_slide_content pb-0">
+        <div class="container"><!-- STRART CONTAINER -->
+            <div class="row  align-items-center">
+                {% for i in adti %}
+                <div class="col-xl-6 col-md-7">
+                    <div class="banner_content text_white banner_center_content">
+                        <a href="https://adti.uz/" target="_blank"><h2 class="animation" data-animation="fadeInUp" data-animation-delay="0.00.5s"style="font-size: 2rem;">{{i.nomi}}</h2></a>
+                       <style>
+                        .animation:hover{
+                           color: #27E278;
+                        }
+                       </style>
+                        <div id="typed-strings" class="d-none">
+                            <b>{{i.yili}}</b>
+                        </div>
+                        <h4 class="animation" data-animation="fadeInUp" data-animation-delay="0.00.5s"> <spanid="typed-text" class="text_default"></span></h4>
+                        <p class="animation" data-animation="fadeInUp" data-animation-delay="0.04s" style="text-align: justify;">{{i.malumot}}</p>
+                        <hr color="#27E278">
+                        <a href="/read/" class="btn btn-default rounded-0 btn-aylen animation" data-animation="fadeInUp" data-animation-delay="0.05s">{{i.fayl}}</a>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-md-6">
+                    <div class="banner_img animation" data-animation="fadeInUp" data-animation-delay="0.02s">
+                        <a href="{{i.rasm.url}}">
+                            <img src="{{i.rasm.url}}" alt="my_image" style="width: 2200px; height: 650px; font-size: 100px" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {%endfor%}
+        </div><!-- END CONTAINER-->
+    </div>
+    <div class="social_banner social_vertical">
+        <ul class="list_none social_icons text-center">
+            
+            <li><a target="_blank" href="https://t.me/adtiuz_rasmiy" class="sc_instagram"><i class="ion-paper-airplane"></i></a></li>
+            <li><a target="_blank" href="https://www.youtube.com/watch?v=DyWUOynrYh0" class="sc_youtube"><i class="ion-social-youtube-outline"></i></a></li>
+            <li><a target="_blank" href="https://instagram.com/adtiuz/" class="sc_instagram"><i class="ion-social-instagram-outline"></i></a></li>
+            <li><a target="_blank" href="https://www.facebook.com/adtiuz/" class="sc_facebook"><i class="ion-social-facebook"></i></a></li>
+            <li><a target="_blank" href="https://x.com/i/flow/login?redirect_after_login=%2FAndijonDavlat" class="sc_twitter"><i class="ion-social-twitter"> </i></a></li>
+
+            <!-- <li><a href="#" class="sc_google"><i class="ion-social-googleplus"></i></a></li> -->
+
+
+
+        </ul>
+    </div>
+</section>
+
+
+<!-- END SECTION BANNER -->
+
+
+<!-- START SECTION ABOUT US -->
+<section id="about" class="bg_black4">
+    <div class="container">
+        <div class="heading_s1 heading_light animation" data-animation="fadeInUp" data-animation-delay="0.00.5s">
+            <h2 style="justify-content: center; align-items: center; display: flex;">{% trans " Axborot texnologiyalar haqqida ma'lumot " %}</h2>
+        </div>
+        <!-- <div class="heading_s1 heading_light animation" data-animation="fadeInUp" data-animation-delay="0.00.5s"></div> -->
+        <!-- <h2 style="justify-content: center; align-items: center; display: flex; color:white; font-size: 2rem;margin-bottom: 80px;" > Andijon davlat tibbiyot instituti Prorektor</h2> -->
+
+        {% for i in rttm_malumot %}
+        <div class="row">
+            <div class="col-md-6">
+                <div data-animation="fadeInUp" data-animation-delay="0.00.5s">
+                    <a href="{{i.rasim.url}}">
+                        <img src="{{i.rasim.url}}" alt="about_img" />
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="about_info text_white animation" data-animation="fadeInUp" data-animation-delay="0.00.5s">
+                    <ul class="list_none blog_meta">
+                    </ul>
+                    <p style="text-align: justify;">{{i.malumot}}</p>
+                    <hr color="#27E278">
+                    <!-- <a href="blog-detail-dark.html" class="read_more">Xizmat telefone:    {{i.phone}}</a> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+<!-- END SECTION ABOUT US -->
+
+
+<!-- START SECTION ABOUT US -->
+{% for i in prorektor %}
+<section id="about" class="bg_black4">
+    <div class="container">
+        <div class="heading_s1 heading_light animation" data-animation="fadeInUp" data-animation-delay="0.00.5s">
+            <h2 style="justify-content: center; align-items: center; display: flex;">{{i.lavozim_nomi}} </h2>
+        </div>
+        <!-- <div class="heading_s1 heading_light animation" data-animation="fadeInUp" data-animation-delay="0.00.5s"></div> -->
+        <!-- <h2 style="justify-content: center; align-items: center; display: flex; color:white; font-size: 2rem;margin-bottom: 80px;" > Andijon davlat tibbiyot instituti Prorektor</h2> -->
+        
+        <div class="row">
+            <div class="col-md-5">
+                <div data-animation="fadeInUp" data-animation-delay="0.00.5s">
+                    <a href="{{i.rasim.url}}">
+                        <img src="{{i.rasim.url}}" alt="about_img" />
+                    </a>
+
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="about_info text_white animation" data-animation="fadeInUp" data-animation-delay="0.00.5s">
+                    <div class="heading_s1 heading_light mb-3">
+                        <h2 style="font-size: 1.5rem;" >  {{i.ism}}</h2>
+                    </div>
+                    <!-- <ul class="list_none blog_meta">
+                            <li style="color: #27E278;"><i class="ion-social-twitter"> </i>Lavozimi</li>
+                            <li><i class="ion-chatboxes"> </i>{{i.lavozim}}</li>
+                        </ul> -->
+                    <br>
+                    <p style="text-align: justify;">{{i.malumot}}</p>
+                    <hr color="#27E278">
+
+                    <!-- <a href="blog-detail-dark.html" class="read_more">Xizmat telefone:    {{i.phone}}</a> -->
+                    <span style="color: #27E278;">{% trans " Xizmat telefoni " %}: </span>
+                    <span>{{i.phone}}</span>
+                    <br>
+                    <br>
+                    <span style="color: #27E278;">{% trans " Email " %}: </span>
+                    <a href="mailto:info@sitename.com">{{i.email}}</a>
+                    <br>
+                    <br>
+                    <p><span style="color: #27E278;">{% trans " Qabul vaqti: " %}: </span> {% trans " Chorshanba, 9:00 - 12:00 " %}</p>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endfor %}
+
+<!-- END SECTION ABOUT US -->
+{% for i in atm_raxbar %}
+<section id="blog" class="pb_70 bg_black4">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-8 col-lg-7 col-md-9 text-center">
+                <div class="heading_s1 heading_light animation" data-animation="fadeInUp" data-animation-delay="0.00.5s">
+                    <h2 style="font-size: 2rem;">{{ i.lavozim_nomi }}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="clearfix small_divider"></div>
+            </div>
+        </div>
+        <div class="row justify-content-center animation" data-animation="fadeInUp" data-animation-delay="0.04s">
+            
+            <div class="row">
+                <div class="col-md-5">
+                    <div data-animation="fadeInUp" data-animation-delay="0.00.5s">
+                        <a href="{{i.rasim.url}}">
+                            <img src="{{i.rasim.url}}" alt="about_img" />
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="about_info text_white animation" data-animation="fadeInUp"
+                        data-animation-delay="0.00.5s">
+                        <div class="heading_s1 heading_light mb-3">
+                            <h2 style="font-size: 1.5rem;" > {{i.ism}}</h2>
+                        </div>
+                        <!-- <ul class="list_none blog_meta"> -->
+                        <!-- <li style="color: #27E278;">  <i class="fa fa-shopping-bag">   </i>Lavozimi: </li> -->
+                        <!-- <li><i class="ion-chatboxes">    </i>{{i.lavozim}}</li> -->
+                        <!-- </ul> -->
+                        <br>
+                        <p style="text-align: justify;">{{i.malumot}}</p>
+                        <hr color="#27E278">
+                        <!-- <a href="blog-detail-dark.html" class="read_more">Xizmat telefone:    {{i.phone}}</a> -->
+                        <span style="color: #27E278;">{% trans " Xizmat telefoni " %}:</span>
+                        <span>{{i.phone}}</span>
+                        <br>
+                        <br>
+                        <span style="color: #27E278;">{% trans "Email"%}: </span>
+                        <a href="mailto:info@sitename.com">{{i.email}}</a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endfor %}
+<!-- END SECTION BLOG -->
+
+
+<!-- START SECTION BLOG -->
+<section id="blog" class="pb_70 bg_black4">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-8 col-lg-7 col-md-9 text-center">
+                <div class="heading_s1 heading_light animation" data-animation="fadeInUp" data-animation-delay="0.00.5s">
+                    <h2 style="font-size: 2rem;">{% trans " RAQAMLI TA’LIM TEXNOLOGIYALAR MARKAZI HODIMLARI " %}</h2>
+                </div>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="clearfix small_divider"></div>
+            </div>
+        </div>
+        <div class="row justify-content-center animation" data-animation="fadeInUp" data-animation-delay="0.04s">
+            {% for i in raxbarlar %}
+            <div class="col-lg-4 col-md-6">
+                <div class="blog_post box_dark text_white">
+                    <div class="blog_img">
+                        <!-- <div class="blog_img1">
+                            <button title="Close (Esc)" type="button" class="blog_img1-Close">X</button>
+                        </div> -->
+                        <a href="{{i.rasim.url}}"></a>
+                        <img src="{{i.rasim.url}}" alt="blog_small_img1">
+                        
+                    </div>
+                    <div class="blog_content">
+                        <div class="blog_text">
+                            <!-- <h5 class="fa fa-user"> {{i.ism1}}</h5> -->
+                            <h5 style="align-items: center;"  > {{i.ism1}}</h5>
+                            <ul class="list_none blog_meta">
+                                 <p><li style="color: #27E278;">{% trans " Lavozimi: " %}</li>{{i.lavozimi}}</p>
+                            </ul>
+                            <p>{{i.text}}</p>
+                            <br>
+                            <a style="color: #27E278;" class="read_more">{% trans " Xizmat telefone " %}</a>
+                            <div class="post_category">{{i.phone}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- END SECTION BLOG -->
+<!-- START SECTION SERVICES -->
+<section id="services" class="bg_black2">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-8 col-lg-7 col-md-9 text-center">
+                <div class="heading_s1 heading_light animation text-center" data-animation="fadeInUp"
+                    data-animation-delay="0.00.5s">
+                    <h2>{% trans " RAQAMLI TA’LIM TEXNOLOGIYALAR MARKAZI " %}</h2>
+                </div>
+                <p class="animation text-white" data-animation="fadeInUp" data-animation-delay="0.00.5s">{% trans " Markazning tasarrufidagi bo`limlar, va Markazning vazifalari va xizmat turlari." %}</p>
+            </div>
+        </div>
+        <div class="row animation" data-animation="fadeInUp" data-animation-delay="0.04s">
+            {% for i in servis %}
+            <div class="col-lg-4 col-sm-6 text-center">
+                <div class="icon_box icon_box_style_1 box_dark">
+                    <div class="box_icon mb-3">
+                        <i class="ti-layout-media-center-alt"></i>
+                    </div>
+                    <div class="icon_box_content text_white">
+                        <h5>{{i.nomi}}</h5>
+                        <p>{{i.malumot}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- END SECTION SERVICES -->
+
+<!-- START SECTION PORTFOLIO -->
+<section id="portfolio" class="pb_70 bg_black4">
+    <div class="container">
+    	<div class="row justify-content-center">
+            <div class="col-xl-6 col-lg-7 col-md-9 text-center">
+                <div class="heading_s1 heading_light animation" data-animation="fadeInUp" data-animation-delay="0.00.5s">
+                    <h2>Foto gallery</h2>
+                </div>
+                <!-- <p class="animation text-white" data-animation="fadeInUp" data-animation-delay="0.00.5s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p> -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="cleafix small_divider"></div>
+            </div>
+        </div>
+        <div class="row mb-4 mb-md-5">
+            <div class="col-md-12 text-center">
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="grid_container gutter_medium work_col3 portfolio_gallery portfolio_style2 animation" data-animation="fadeInUp" data-animation-delay="0.04s">
+                    <!-- START PORTFOLIO ITEM -->
+                    {% for i in foto %}
+                    <li class="grid_item web-design">
+                        <div class="portfolio_item" data-tilt>
+                            <a href="#" class="image_link">
+                                <img src="{{i.rasim.url}}" alt="image">
+                            </a>
+                                <div class="portfolio_content">
+                                    <div class="link_container">
+                                        <!-- <a href="../static/assets/images/zal0.jpg" class="image_popup"><i class="ion-image"></i></a> -->
+                                        <a href="{{i.rasim.url}}" class="image_popup"><i class="ion-image"></i></a>
+                                        <!-- <a href="portfolio-detail-dark.html"><i></i></a> -->
+                                    </div>
+                                    <h5><a href="portfolio-detail-dark.html">{{i.bino}}</a></h5>
+                                    <p>{{i.xona}}</p>
+                              </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                    <!-- END PORTFOLIO ITEM -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END SECTION PORTFOLIO -->
+
+
+<!-- START SECTION COUNTER -->
+<section class="counter_wrap bg_black2">
+    <h2
+        style="justify-content: center; align-items: center; display: flex; color: #27E278; font-size: 2.5rem;margin-bottom: 80px;">
+        {% trans " Institutda kompyuterlar soni " %}</h2>
+    <div class="container">
+        <div class="row">
+            {%for i in kompyuter%}
+            <div class="col-lg-3 col-md-3 col-6">
+                <div class="box_counter text-center animation" data-animation="fadeInUp" data-animatio  n-delay="0.00.5s">
+                    <!-- <i class="fa fa-laptop" aria-hidden="true"></i> -->
+                    <i class="fa fa-laptop" style="margin-bottom: 20px;"></i>
+                    <!-- <i class="flaticon-briefing"></i> -->
+                    <h3 class="counter_text" style="color: #27E278;"> <span class="counter">{{i.soni}}</span></h3>
+                    <p>{{i.nomi}}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- END SECTION COUNTER -->
+
+
+
+<!-- START SECTION CONTACT -->
+<section id="contact" class="bg_black2">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="heading_s1 heading_light animation" data-animation="fadeInUp"
+                    data-animation-delay="0.00.5s">
+                    <h2></h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="field_form form_style3 animation" data-animation="fadeInUp" data-animation-delay="0.00.5s">
+                    <form method="post" name="enq">
+                        <div class="row">
+                            <div class="form-group col-12">
+                                <span style=" color: white;">{% trans " Andijon davlat tibbiyot instituti Andijon sh.Yu.Otabekov 1-uy " %}</span>
+                                <hr color="#27E278">
+                                <!-- <input  required="required" placeholder=" Andijon davlat tibbiyot instituti Andijon sh. Yu.Otabekov 1-uy" id="first-name" class="form-control" name="name" type="text"> -->
+                            </div>
+                            <P></P>
+                            <div class="form-group col-12">
+                                <span style=" color: white;">{% trans "Telefon" %}: (0-374) 223-94-60</span>
+                                <hr color="#27E278">
+                                <!-- <input required="required" placeholder="Telefon: (0-374) 223-94-60" id="email" class="form-control" name="email" type="email"> <span></span> -->
+                            </div>
+                            <div class="form-group col-12">
+                                <span style=" color: white;">{% trans " Email " %}: rttm@adti.uz</span>
+                                <hr color="#27E278">
+                                <!-- <input placeholder="Email: info@adti.uz" id="subject" class="form-control" name="subject" type="text"> -->
+                            </div>
+                            <div class="form-group col-12">
+                                <span style=" color: white;">{% trans " © adti.uz Barcha huquqlar himoyalangan " %}</span>
+                                <hr color="#27E278">
+                                <!-- <input placeholder="© adti.uz  Barcha huquqlar himoyalangan" id="subject" class="form-control" name="subject" type="text"> -->
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="contact_map mt-4 mt-md-0 animation" data-animation="fadeInUp"
+                    data-animation-delay="0.00.5s">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12079.312692396692!2d72.3260214!3d40.8097695!3m2!1i1024!2i768!4f13.1!3m3!1m2!0.5s0x38bc945555555555%3A0x9ff5d287453939eb!0.5sAndijan%20State%20Medical%20Institute!5e0!3m2!0.5sen!0.5s!4v1720247252636!5m2!0.5sen!0.5s"
+                        width="300" height="150" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- START SECTION CONTACT -->
+
+{% endblock content%}
